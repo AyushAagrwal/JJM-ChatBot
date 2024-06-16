@@ -1,0 +1,241 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#chat-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.message.assistant {
+  background-color: #e6f7ff;
+  flex-direction: row;
+}
+
+.message.user {
+  background-color: #f1f1f1;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.message-content {
+  background: #e6f7ff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  max-width: 80%;
+}
+
+.message-content span {
+  display: block;
+  white-space: pre-line; /* Ensures line breaks are preserved */
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+#user-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  flex: 1;
+  font-size: 1em;
+}
+
+#send-btn,
+#clear-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+#send-btn:hover,
+#clear-btn:hover {
+  background: #0056b3;
+}
+
+.typing {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: blink 1.4s infinite both;
+}
+
+.typing:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: #333;
+  }
+  50% {
+    background-color: #ccc;
+  }
+}
+
+.google-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #f4b400;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #c88200;
+}
+
+/* Language Selector Styles */
+#language-selector {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#language-select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease;
+  -webkit-appearance: none; /* Remove default arrow on Safari */
+  -moz-appearance: none; /* Remove default arrow on Firefox */
+  appearance: none; /* Remove default arrow */
+}
+
+#language-select:hover,
+#language-select:focus {
+  border-color: #007bff;
+}
+
+#language-select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+}
+
+#language-select option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#chat-history {
+  background-color: #f0f2f5;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: calc(100% - 40px); /* Adjust height based on the design */
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#history-messages {
+  margin-top: 10px;
+  max-height: calc(100% - 50px); /* Adjust max-height based on the design */
+  overflow-y: auto;
+}
+
+.message-history {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-history.user {
+  background-color: #f1f1f1;
+  text-align: right;
+}
+
+.message-history .message-content {
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+.message-history .timestamp {
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JJM Guidelines Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Chat with JJM Operational Guidelines</h1>
+      <div id="language-selector">
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="kn">ಕನ್ನಡ</option>
+        </select>
+      </div>
+      <div id="chat-container">
+        <div id="chat-box">
+          <div class="message assistant">
+            <img
+              src="{{ url_for('static', filename='images/bot.png') }}"
+              alt="Bot"
+              class="avatar"
+            />
+            <span>Ask me a question based on the guidelines</span>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Type your question here"
+        />
+        <button id="send-btn">Send</button>
+        <button id="clear-btn">Clear Chat History</button>
+      </div>
+
+      <div id="google-search-results"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  </body>
+</html>
